@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For Oversampler
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+createOversamplerData	KEYWORD2
+analogRead2x	KEYWORD2
+analogRead4x	KEYWORD2
+analogRead8x	KEYWORD2
+analogRead16x	KEYWORD2
+analogRead32x	KEYWORD2
+analogRead64x	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+OversamplerData	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
