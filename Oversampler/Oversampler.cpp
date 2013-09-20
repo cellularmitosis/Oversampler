@@ -2,7 +2,7 @@
 Oversampler.cpp - A simple library which makes it easier to oversample Arduino
 ADC inputs.
 https://github.com/cellularmitosis/Oversampler
-v0.1 (Sept 15, 2013)
+v0.2 (Sept 18, 2013)
 
 Copyright (c) 2013 Jason Pepas
 
@@ -42,11 +42,17 @@ OversamplerData* createOversamplerData()
  	{
 		return NULL;
 	}
-  
-	data->accumulator = 0;
-	data->averagedValue = 0;
+
+	initOversamplerData(data);  
   
 	return data;
+}
+
+
+void initOversamplerData(OversamplerData *data)
+{
+	data->accumulator = 0;
+	data->averagedValue = 0;
 }
 
 

@@ -2,7 +2,7 @@
 Oversampler.h - A simple library which makes it easier to oversample Arduino
 ADC inputs.
 https://github.com/cellularmitosis/Oversampler
-v0.1 (Sept 15, 2013)
+v0.2 (Sept 18, 2013)
 
 Copyright (c) 2013 Jason Pepas
 
@@ -40,7 +40,23 @@ struct _OversamplerData
 
 typedef struct _OversamplerData OversamplerData;
 
+/*
+To create the data "object" used by the analogReadNx() functions, you
+can use createOversamplerData(), which malloc's an OversamplerData and
+hands you the pointer:
+
+  OversamplerData *thisIsOnTheHeap = createOversamplerData();
+
+or declare a OversamplerData on the stack and use initOversamplerData():
+
+  OversamplerData thisIsOnTheStack = initOversamplerData(&thisIsOnTheStack);
+
+Note that calling malloc() bumps your sketch size by ~630 bytes.
+*/
+
 OversamplerData* createOversamplerData();
+void initOversamplerData(OversamplerData *data);
+
 uint16_t analogRead2x(OversamplerData *data, uint8_t pin);
 uint16_t analogRead4x(OversamplerData *data, uint8_t pin);
 uint16_t analogRead8x(OversamplerData *data, uint8_t pin);
